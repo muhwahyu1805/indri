@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Indri Birthday! ❤️</title>
+    <title>Happy 20th Birthday, Sayang! ❤️</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Pacifico&display=swap" rel="stylesheet">
     <style>
         * {
@@ -47,8 +47,25 @@
             font-family: 'Pacifico', cursive;
             color: #ff4757;
             font-size: 2.5rem;
-            margin-bottom: 10px;
+            margin-bottom: 20px; /* Jarak bawah heading */
         }
+
+        /* --- STYLING BARU UNTUK FOTO --- */
+        .foto-pacar {
+            width: 150px; /* Ukuran lebar foto */
+            height: 150px; /* Ukuran tinggi foto (sama agar bulat sempurna) */
+            border-radius: 50%; /* Membuat foto jadi lingkaran */
+            object-fit: cover; /* Memastikan foto tidak gepeng */
+            border: 5px solid #fff; /* Bingkai putih */
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15); /* Bayangan halus */
+            margin-bottom: 20px; /* Jarak bawah foto */
+            transition: transform 0.3s ease;
+        }
+
+        .foto-pacar:hover {
+            transform: scale(1.05); /* Efek zoom sedikit saat kursor di atas foto */
+        }
+        /* ---------------------------------- */
 
         .age {
             font-size: 1.2rem;
@@ -130,12 +147,20 @@
 </head>
 <body>
 
+    <!-- TAG AUDIO UNTUK MUSIK -->
+    <!-- Ganti "lagu.mp3" dengan nama file musikmu atau link musik online -->
     <audio id="musikUltah" src="ultah1.mpeg" loop></audio>
 
+    <!-- Wadah untuk animasi hati -->
     <div class="hearts-container" id="heartsContainer"></div>
 
     <div class="card">
         <h1>Happy Birthday! 🎉</h1>
+        
+        <!-- TAG UNTUK FOTO -->
+        <!-- Ganti "foto-pacar.jpg" dengan nama file fotomu -->
+        <img src="ultah.jpeg" alt="Foto Sayang" class="foto-pacar">
+        
         <p class="age">Selamat ulang tahun yang ke-20, Sayang!</p>
         
         <button class="btn" id="btnKejutan" onclick="bukaKejutan()">Buka Pesan Untukmu 💌</button>
@@ -157,8 +182,9 @@
             
             // Memutar musik
             var musik = document.getElementById('musikUltah');
+            // Menambahkan penanganan jika browser memblokir autoplay musik
             musik.play().catch(function(error) {
-                console.log("Musik gagal berputar otomatis: ", error);
+                console.log("Musik gagal berputar otomatis (perlu interaksi pengguna): ", error);
             });
         }
 
